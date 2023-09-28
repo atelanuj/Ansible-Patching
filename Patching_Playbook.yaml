@@ -1,0 +1,42 @@
+---
+- name: Self Made Patching Playbook
+  hosts: 
+  become: true
+  tasks:
+    - name: Copy pre-check script to the remote server
+      copy:
+        src: /home/ubuntu/precheck.sh
+        dest: /home/
+        mode: preserve
+
+    - name: Execute the pre-check script
+      command: /home/precheck.sh
+
+    - name: Applying Patches
+      apt:
+        name: "*"
+        state: latest
+
+    - name: Rebooting Nodes
+      reboot:
+        reboot_timeout: 6000
+
+    - name: Copy post-check script to the remote server
+      copy:
+        src: /home/ubuntu/postcheck.sh
+        dest: /home/
+        mode: preserve
+
+    - name: Execute the post-check script
+      command: /home/postcheck.sh
+
+
+    - name: Finding the pre & post check result files.
+      shell: (cd /home/; find . -maxdepth 1 -type f -iname "*.txt") | cut -d'/' -f2
+      register: files_to_fetch
+
+    - name: Fetching the Files to Ansible Server
+      fetch:
+        src: /home/{{item}}
+        dest: /tmp/
+      with_items: "{{files_to_fetch.stdout_lines}}"
