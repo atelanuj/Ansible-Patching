@@ -1,3 +1,4 @@
+# put in /home/ubuntu/
 #!/bin/bash
 
 echo -e "\nDate & Time Information:" >>/home/"postcheck_$(date +"%d-%m-%Y").txt"

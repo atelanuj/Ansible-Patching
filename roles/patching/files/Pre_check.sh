@@ -1,3 +1,4 @@
+# Put the Script in /home/ubuntu/
 #!/bin/bash
 echo -e "\nDate & Time Information:" >>/home/"precheck_$(date +"%d-%m-%Y").txt"
 date >>/home/"precheck_$(date +"%d-%m-%Y").txt" 2>&1
