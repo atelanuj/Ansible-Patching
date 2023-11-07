@@ -6,7 +6,7 @@
     mode: preserve
 
 - name: Execute the pre-check script
-  command: /home/pre_check.sh
+  command: /home/Pre_check.sh
 
 - name: Applying Patches
   apt:
@@ -19,12 +19,12 @@
 
 - name: Copy post-check script to the remote server
   copy:
-    src: '{{ role_path }}/files/post_check.sh'
+    src: '{{ role_path }}/files/Post_check.sh'
     dest: /home/
     mode: preserve
 
 - name: Execute the post-check script
-  command: /home/post_check.sh
+  command: /home/Post_check.sh
 
 - import_tasks: fetching_files.yml
 ...
