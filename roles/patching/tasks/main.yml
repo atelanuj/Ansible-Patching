@@ -15,7 +15,7 @@
 
 - name: Rebooting Nodes
   reboot:
-    reboot_timeout: {{ reboot_time }}
+    reboot_timeout: "{{ reboot_time }}"
 
 - name: Copy post-check script to the remote server
   copy:

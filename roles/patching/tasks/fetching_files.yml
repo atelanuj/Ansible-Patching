@@ -8,5 +8,5 @@
     src: /home/{{item}}
     dest: /tmp/
   with_items: 
-    - "{{files_to_fetch.stdout_lines}}"
+    - "{{ files_to_fetch.stdout_lines }}"
 ...
