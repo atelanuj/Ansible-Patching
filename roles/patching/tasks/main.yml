@@ -6,7 +6,7 @@
     mode: 777
 
 - name: Execute the pre-check script
-  ansible.builtin.script: /home/Pre_check.sh
+  command: /home/Pre_check.sh
 
 - name: Applying Patches
   apt:
@@ -24,7 +24,7 @@
     mode: preserve
 
 - name: Execute the post-check script
-  ansible.builtin.script: /home/Post_check.sh
+  command: /home/Post_check.sh
 
 - import_tasks: fetching_files.yml
 ...
