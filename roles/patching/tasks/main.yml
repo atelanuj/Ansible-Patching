@@ -3,7 +3,7 @@
   copy:
     src: '{{ role_path }}/files/Pre_check.sh'
     dest: /home/
-    mode: 777
+    mode: u+rwx
 
 - name: Execute the pre-check script
   command: /home/Pre_check.sh
