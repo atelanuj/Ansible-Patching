@@ -3,7 +3,7 @@
   copy:
     src: '{{ role_path }}/files/Pre_check.sh'
     dest: /home/
-    mode: preserve
+    mode: 777
 
 - name: Execute the pre-check script
   ansible.builtin.script: /home/Pre_check.sh
