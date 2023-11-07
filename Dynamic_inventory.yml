@@ -1,0 +1,9 @@
+---
+plugin: aws_ec2
+regions:
+  - ap-south-1
+filters:
+  tag:Name: "test"
+    #keyed_groups:
+    #- prefix: type_
+    # key: image_id

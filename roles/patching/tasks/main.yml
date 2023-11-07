@@ -1,0 +1,30 @@
+---
+- name: Copy pre-check script to the remote server
+  copy:
+    src: "{{ role_path }}"/files/Pre_check.sh
+    dest: /home/
+    mode: preserve
+
+- name: Execute the pre-check script
+  command: /home/pre_check.sh
+
+- name: Applying Patches
+  apt:
+    name: "*"
+    state: latest
+
+- name: Rebooting Nodes
+  reboot:
+    reboot_timeout: {{ reboot_time }}
+
+- name: Copy post-check script to the remote server
+  copy:
+    src: "{{ role_path }}"/files/post_check.sh
+    dest: /home/
+    mode: preserve
+
+- name: Execute the post-check script
+  command: /home/post_check.sh
+
+- import_tasks: fetching_files.yml
+...

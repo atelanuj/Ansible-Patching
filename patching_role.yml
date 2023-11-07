@@ -1,0 +1,6 @@
+---
+- name: this will start the patching role on linux servers
+  hosts: all
+  become: yes
+  roles:
+    - patching
