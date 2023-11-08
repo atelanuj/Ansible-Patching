@@ -21,7 +21,7 @@
   copy:
     src: '{{ role_path }}/files/Post_check.sh'
     dest: /home/
-    mode: preserve
+    mode: u+rwx
 
 - name: Execute the post-check script
   shell: '/home/Post_check.sh'
