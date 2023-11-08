@@ -6,7 +6,7 @@
     mode: u+rwx
 
 - name: Execute the pre-check script
-  command: /home/Pre_check.sh
+  shell: '/home/Pre_check.sh'
 
 - name: Applying Patches
   apt:
@@ -24,7 +24,7 @@
     mode: preserve
 
 - name: Execute the post-check script
-  command: /home/Post_check.sh
+  shell: '/home/Post_check.sh'
 
 - import_tasks: fetching_files.yml
 ...
