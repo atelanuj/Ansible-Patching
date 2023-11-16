@@ -25,7 +25,7 @@ jobs:
         # If false, this action will not setup python and will instead rely on the already installed python.
         #setup_python: # optional, default is true
         # The directory where to run ansible-lint from. Default is `github.workspace`.
-        working_directory: ./roles/ 
+        working_directory: "./"
           
         
         
