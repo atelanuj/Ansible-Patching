@@ -19,5 +19,5 @@ jobs:
       # replace "master" with any valid ref
       uses: ansible/ansible-lint@v6.22.0
       with:
-        working_directory: "./"
+        target: "./"
         args: "-q"
