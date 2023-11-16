@@ -5,8 +5,10 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  Ansiblelint:
+  build:
+
     runs-on: ubuntu:latest
+
     steps:
       - name: checking Code
         uses: actions/checkout@v4
