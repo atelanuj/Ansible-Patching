@@ -15,14 +15,18 @@ jobs:
     # Important: This sets up your GITHUB_WORKSPACE environment variable
     - uses: actions/checkout@v2
       
-    - name: Lint Ansible Playbook
-      uses: ansible/ansible-lint-action@master
+    - name: run-ansible-lint
+      # You may pin to the exact commit or the version.
+      # uses: ansible/ansible-lint@4113104583a59ba2d1f04fee3b049c5f43f6578c
+      uses: ansible/ansible-lint@v6.22.0
       with:
-        args: "-q"
-        targets: "./"
-        override-deps: |
-            ansible==2.9
-            ansible-lint==4.2.0
+        # Arguments to be passed to ansible-lint command.
+        args: -q
+        # If false, this action will not setup python and will instead rely on the already installed python.
+        #setup_python: # optional, default is true
+        # The directory where to run ansible-lint from. Default is `github.workspace`.
+        working_directory: ./roles/ 
+          
         
         
       
