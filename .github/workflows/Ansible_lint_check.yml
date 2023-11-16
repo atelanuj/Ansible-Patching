@@ -2,15 +2,14 @@ name: Ansible_lint
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+
 jobs:
   build:
 
     runs-on: ubuntu:latest
 
     steps:
-      - name: checking Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      
       - name: running Ansible-lint to check the syntax of ansible playbook
         uses: ansible/ansible-lint@main
