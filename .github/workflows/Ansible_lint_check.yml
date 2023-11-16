@@ -14,3 +14,5 @@ jobs:
       
       - name: running Ansible-lint to check the syntax of ansible playbook
         uses: ansible/ansible-lint@main
+        with:
+          targets: "./Patching_Playbook.yaml"
