@@ -1,30 +1,30 @@
 ---
 - name: Copy pre-check script to the remote server
-  copy:
+  ansible.builtin.copy:
     src: '{{ role_path }}/files/Pre_check.sh'
     dest: /home/
     mode: u+rwx
 
 - name: Execute the pre-check script
-  shell: '/home/Pre_check.sh'
+  ansible.builtin.shell: '/home/Pre_check.sh'
 
 - name: Applying Patches
-  apt:
+  ansible.builtin.apt:
     name: "*"
     state: latest
 
 - name: Rebooting Nodes
-  reboot:
+  ansible.builtin.reboot:
     reboot_timeout: "{{ reboot_time }}"
 
 - name: Copy post-check script to the remote server
-  copy:
+  ansible.builtin.copy:
     src: '{{ role_path }}/files/Post_check.sh'
     dest: /home/
     mode: u+rwx
 
 - name: Execute the post-check script
-  shell: '/home/Post_check.sh'
+  ansible.builtin.shell: '/home/Post_check.sh'
 
-- import_tasks: fetching_files.yml
+- ansible.builtin.import_tasks: fetching_files.yml
 ...
