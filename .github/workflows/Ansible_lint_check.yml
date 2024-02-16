@@ -1,7 +1,7 @@
 name: Ansible_lint
 on:
-  # push:
-  #   branches: [ "main" ]
+  push:
+    branches: [ "atelanuj_Anisble_lint" ]
   pull_request:
     branches: [ "main" ]  
 jobs:
