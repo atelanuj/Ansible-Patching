@@ -2,8 +2,8 @@ name: Ansible_lint
 on:
   push:
     branches: [ "atelanuj_Anisble_lint" ]
-  pull_request:
-    branches: [ "main" ]  
+  # pull_request:
+  #   branches: [ "main" ]  
 jobs:
   build:
 
@@ -20,7 +20,7 @@ jobs:
       #     args: "-q"
 
       - name: Runnig Superlinter
-        uses: docker://super-linter/super-linter@latest
+        uses: super-linter/super-linter@latest
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           USE_FIND_ALGORITHM: true
