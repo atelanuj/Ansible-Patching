@@ -1,0 +1,8 @@
+---
+- name: Install sos on servers
+  hosts: localhost
+  tasks:
+    - name: Install package
+      ansible.builtin.yum:
+        name: sos
+        state: present
