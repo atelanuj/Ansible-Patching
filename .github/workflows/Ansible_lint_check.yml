@@ -20,7 +20,7 @@ jobs:
       #     args: "-q"
 
       - name: Runnig Superlinter
-        uses: super-linter/super-linter@latest
+        uses: docker://super-linter/super-linter@latest
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           USE_FIND_ALGORITHM: true
