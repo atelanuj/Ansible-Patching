@@ -19,7 +19,7 @@ exclude_paths:
 # # parseable: true
 # # quiet: true
 # # strict: true
-verbosity: 2
+verbosity: 0
 
 # # Mock modules or roles in order to pass ansible-playbook --syntax-check
 # mock_modules:
