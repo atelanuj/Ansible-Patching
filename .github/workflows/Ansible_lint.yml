@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: ["main"]
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 jobs:
   build:
     name: Ansible Lint # Naming the build is important to use it as a status check
@@ -14,5 +14,3 @@ jobs:
             fetch-depth: 0
       - name: Running ansible-lint
         uses: ansible/ansible-lint@main
-        # with:
-        #     working_directory: "roles/"

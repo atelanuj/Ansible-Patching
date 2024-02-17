@@ -54,9 +54,11 @@ verbosity: 0
 # # When putting ignores inside the ignore file, they are marked as ignored, but
 # # still visible, making it easier to address later.
 skip_list:
-  - E21
-  - E22
-  - E23
+  - yaml[trailing-spaces]
+  - yaml[indentation]
+
+# warn_list:
+#   - yaml[document-start]  
 
 # # Ansible-lint does not automatically load rules that have the 'opt-in' tag.
 # # You must enable opt-in rules by listing each rule 'id' below.
