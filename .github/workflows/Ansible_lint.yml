@@ -14,3 +14,5 @@ jobs:
             fetch-depth: 0
       - name: Running ansible-lint
         uses: ansible/ansible-lint@v6
+        with:
+            working_directory: "roles/"
