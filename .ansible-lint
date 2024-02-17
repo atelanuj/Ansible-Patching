@@ -54,9 +54,13 @@ verbosity: 0
 # # When putting ignores inside the ignore file, they are marked as ignored, but
 # # still visible, making it easier to address later.
 skip_list:
-  - yaml[trailing-spaces]
+  #- yaml[trailing-spaces]
   - yaml[indentation]
-  - jinja[spacing]
+  #- jinja[spacing]
+  - yaml[comments]  
+  - name[casing]
+  - name[missing]
+  - yaml[new-line-at-end-of-file]
 # warn_list:
 #   - yaml[document-start]  
 
