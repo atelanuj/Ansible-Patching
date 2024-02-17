@@ -1,0 +1,30 @@
+name: Anisble-Lint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+      # To report GitHub Actions status checks
+      statuses: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: running Ansible-lint to check the syntax of ansible playbook
+        uses: ansible/ansible-lint@main
+        with:
+          working_directory: roles
+          args: -q
