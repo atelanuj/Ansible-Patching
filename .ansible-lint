@@ -16,6 +16,26 @@ exclude_paths:
     - ./ansible-lint-ignore
     # - ./.pre-commit-config.yaml
 
+warn_list:
+  - yaml[trailing-spaces]
+  - yaml[indentation]
+  - jinja[spacing]
+  - yaml[comments]  
+  - name[casing]
+  - name[missing]
+  - yaml[new-line-at-end-of-file]
+
+
+
+
+
+
+
+# warn_list:
+#   - yaml[document-start]
+
+
+
 # # parseable: true
 # # quiet: true
 # # strict: true
@@ -53,16 +73,7 @@ verbosity: 0
 # # the use of skip_list below because that will hide violations from the output.
 # # When putting ignores inside the ignore file, they are marked as ignored, but
 # # still visible, making it easier to address later.
-skip_list:
-  #- yaml[trailing-spaces]
-  - yaml[indentation]
-  #- jinja[spacing]
-  - yaml[comments]  
-  - name[casing]
-  - name[missing]
-  - yaml[new-line-at-end-of-file]
-# warn_list:
-#   - yaml[document-start]  
+  
 
 # # Ansible-lint does not automatically load rules that have the 'opt-in' tag.
 # # You must enable opt-in rules by listing each rule 'id' below.
