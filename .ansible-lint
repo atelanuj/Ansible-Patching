@@ -11,7 +11,10 @@
 # option are parsed relative to the CWD of execution.
 exclude_paths:
     - ./.github
-    - ./Test.yml    
+    - ./Test.yml
+    - ./.ansible-lint
+    - ./ansible-lint-ignore
+    # - ./.pre-commit-config.yaml
 
 # # parseable: true
 # # quiet: true
