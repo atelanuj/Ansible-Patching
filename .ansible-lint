@@ -24,10 +24,14 @@ warn_list:
   - name[casing]
   - name[missing]
   - yaml[new-line-at-end-of-file]
-
-
-
-
+  - yaml[truthy]
+  - yaml[empty-lines]
+  - yaml[document-start]
+  - yaml[comments-indentation]
+  - yaml[brackets]
+  - yaml[colons]
+  - yaml[commas]
+  - yaml[line-length]
 
 
 

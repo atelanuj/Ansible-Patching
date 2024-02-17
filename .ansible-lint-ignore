@@ -1,1 +1,6 @@
-
+# Patching_Playbook.yaml package-latest
+# Patching_Playbook.yaml risky-shell-pipe
+# Patching_Playbook.yaml no-changed-when
+# Patching_Playbook.yaml fqcn
+# Patching_Playbook.yaml jinja
+# Patching_Playbook.yaml package-latest
