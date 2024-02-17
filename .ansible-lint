@@ -56,7 +56,7 @@ verbosity: 0
 skip_list:
   - yaml[trailing-spaces]
   - yaml[indentation]
-
+  - jinja[spacing]
 # warn_list:
 #   - yaml[document-start]  
 
