@@ -13,4 +13,4 @@ jobs:
         with:
             fetch-depth: 0
       - name: Running ansible-lint
-        uses: ansible/ansible-lint@v4
+        uses: ansible/ansible-lint@v6
