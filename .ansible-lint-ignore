@@ -1,3 +1,7 @@
 # this is just a comment
 #playbook.yml package-latest # disable package-latest rule for playbook.yml
 #playbook.yml deprecated-module
+
+E21
+E22
+E23
