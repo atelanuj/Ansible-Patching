@@ -1,6 +1,6 @@
 ---
 - name: Self Made Patching Playbook
-  hosts: "{{groups[servers]}}"
+  hosts: all
   become: true
   tasks:
     - name: Copy pre-check script to the remote server
