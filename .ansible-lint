@@ -44,7 +44,7 @@ verbosity: 0
 # # Load custom rules from this specific folder
 # # rulesdir:
 # #   - ./rule/directory/
-fail_fast: false
+
 # # Ansible-lint is able to recognize and load skip rules stored inside
 # # `.ansible-lint-ignore` (or `.config/ansible-lint-ignore.txt`) files.
 # # To skip a rule just enter filename and tag, like "playbook.yml package-latest"
