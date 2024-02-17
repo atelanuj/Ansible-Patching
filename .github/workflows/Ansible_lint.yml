@@ -1,30 +1,16 @@
-name: Anisble-Lint
-
+name: ansible-lint-check
 on:
+  pull_request:
+    branches: ["main"]
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
 jobs:
   build:
-    name: Lint
+    name: Ansible Lint # Naming the build is important to use it as a status check
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: read
-      # To report GitHub Actions status checks
-      statuses: write
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-
-      - name: running Ansible-lint to check the syntax of ansible playbook
-        uses: ansible/ansible-lint@main
-        with:
-          working_directory: roles
-          args: -q
+            fetch-depth: 0
+      - name: Running ansible-lint
+        uses: ansible/ansible-lint@latest
