@@ -5,7 +5,7 @@
 
 - name: Fetching the Files to Ansible Server
   fetch:
-    src: /home/{{item}}
+    src: /home/{{ item }}
     dest: /tmp/
   with_items: 
     - "{{ files_to_fetch.stdout_lines }}"
