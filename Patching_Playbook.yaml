@@ -4,13 +4,13 @@
   become: true
   tasks:
     - name: Copy pre-check script to the remote server
-      copy:                         # noqa copy
+      copy:                         # noqa E22
         src: /home/ubuntu/precheck.sh
         dest: /home/
         mode: preserve
 
     - name: Execute the pre-check script
-      command: /home/precheck.sh    # noqa command
+      command: /home/precheck.sh    # noqa E21
 
     - name: Applying Patches
       apt:
@@ -18,7 +18,7 @@
         state: latest
 
     - name: Rebooting Nodes
-      reboot:               # noqa reboot
+      reboot:               # noqa E23
         reboot_timeout: 6000
 
     - name: Copy post-check script to the remote server
