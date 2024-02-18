@@ -4,28 +4,24 @@ on:
     branches: ["main"]
   push:
     branches: ["main"]
-
 jobs:
   job1:
+    name: Code-CheckOut
     runs-on: ubuntu-latest
-    # Map a step output to a job output
-    outputs:
-      output1: ${{ steps.step1.outputs.test }}
-      output2: ${{ steps.step2.outputs.test }}
     steps:
-      - id: step1
-        run: echo "test=hello-lint" >> "$GITHUB_OUTPUT"
-      - id: step2
-        run: echo "test=world Hellow" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
+  
   job2:
-    runs-on: ubuntu-latest
+    name: Runnig Lint
     needs: job1
+    runs-on: ubuntu-latest
     steps:
-      - env:
-          OUTPUT1: ${{needs.job1.outputs.output1}}
-          OUTPUT2: ${{needs.job1.outputs.output2}}
-        run: echo "$OUTPUT1 $OUTPUT2"
-    
+      - name: Running_ansible_lint
+        uses: ansible/ansible-lint@main
+
+
 # jobs:
 #   build:
 #     name: Ansible Lint # Naming the build is important to use it as a status check
