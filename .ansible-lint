@@ -41,9 +41,9 @@ warn_list:
 
 
 # # parseable: true
-quiet: true
+#quiet: true
 # # strict: true
-verbosity: 1
+verbosity: 0
 
 # # Mock modules or roles in order to pass ansible-playbook --syntax-check
 # mock_modules:
