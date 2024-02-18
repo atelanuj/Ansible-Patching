@@ -4,38 +4,39 @@
   become: true
   tasks:
     - name: Copy pre-check script to the remote server
-      copy:                         # noqa E22
+      ansible.builtin.copy:
         src: /home/ubuntu/precheck.sh
         dest: /home/
         mode: preserve
 
     - name: Execute the pre-check script
-      command: /home/precheck.sh    # noqa E21
+      ansible.builtin.command: /home/precheck.sh    
 
     - name: Applying Patches
-      apt:
+      ansible.builtin.apt:
         name: "*"
         state: latest
 
     - name: Rebooting Nodes
-      reboot:               # noqa E23
+      ansible.builtin.reboot:
         reboot_timeout: 6000
 
     - name: Copy post-check script to the remote server
-      copy:
+      ansible.builtin.copy:
         src: /home/ubuntu/postcheck.sh
         dest: /home/
         mode: preserve
 
     - name: Execute the post-check script
-      command: /home/postcheck.sh
+      ansible.builtin.command: /home/postcheck.sh
 
     - name: Finding the pre & post check result files.
-      shell: (cd /home/; find . -maxdepth 1 -type f -iname "*.txt") | cut -d'/' -f2
+      ansible.builtin.shell: (cd /home/; find . -maxdepth 1 -type f -iname "*.txt") | cut -d'/' -f2
       register: files_to_fetch
 
     - name: Fetching the Files to Ansible Server
-      fetch:
+      ansible.builtin.fetch:
         src: /home/{{item}}
         dest: /tmp/
-      with_items: "{{files_to_fetch.stdout_lines}}"
+      loop: "{{files_to_fetch.stdout_lines}}"
+...
