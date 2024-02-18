@@ -4,32 +4,34 @@ on:
     branches: ["main"]
   push:
     branches: ["main"]
+
 jobs:
-  job1:
-    name: Code-CheckOut
+  build:
+    name: Ansible Lint # Naming the build is important to use it as a status check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
             fetch-depth: 0
-  
-  job2:
-    name: Runnig Lint
-    needs: job1
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Running_ansible_lint
         uses: ansible/ansible-lint@main
 
-
 # jobs:
-#   build:
-#     name: Ansible Lint # Naming the build is important to use it as a status check
+#   job1:
+#     name: Code-CheckOut
 #     runs-on: ubuntu-latest
 #     steps:
 #       - uses: actions/checkout@v4
 #         with:
 #             fetch-depth: 0
-
+  
+#   job2:
+#     name: Runnig Lint
+#     needs: job1
+#     runs-on: ubuntu-latest
+#     steps:
 #       - name: Running_ansible_lint
 #         uses: ansible/ansible-lint@main
+
+
