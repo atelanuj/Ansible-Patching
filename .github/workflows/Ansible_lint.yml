@@ -17,6 +17,10 @@ jobs:
       - name: Running_ansible_lint
         uses: ansible/ansible-lint@main
 
+
+
+# Multi Job Pipeline 
+
 # jobs:
 #   job1:
 #     name: Code-CheckOut
