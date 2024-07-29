@@ -18,7 +18,7 @@ jobs:
       #   with:
       #     working_directory: "roles"
       #     args: "-q"
-
+      # 
       - name: Runnig Superlinter
         uses: super-linter/super-linter/slim@latest
         env:
